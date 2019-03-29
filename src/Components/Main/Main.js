@@ -45,8 +45,9 @@ class Main extends Component {
     return (
       <div className="Main">
         <Sidebar setResults={this.setResults}/>
-
-        {this.state.results ? this.listSounds():'cherchez vos titre préférez ...'}
+        <div className="liste">
+          {this.state.results ? this.listSounds():'cherchez vos titre préférez ...'}
+        </div>
       </div>
     )
   }

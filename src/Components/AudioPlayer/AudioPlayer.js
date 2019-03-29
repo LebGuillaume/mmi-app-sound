@@ -1,6 +1,7 @@
 import React from "react"
 
 
+
 class AudioPlayer extends React.Component {
 
     constructor(props, context) {
@@ -19,6 +20,7 @@ class AudioPlayer extends React.Component {
         this.updateVolume = this.updateVolume.bind(this)
         this.onEnded = this.onEnded.bind(this)
         this.updateTime = this.updateTime.bind(this)
+
     }
 
     componentWillReceiveProps() {
