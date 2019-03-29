@@ -45,15 +45,11 @@ class SearchForm extends Component {
     listSounds= () =>{
 
         return this.state.data.map((sound, index)=>{
-            console.log(sound)
             return(
-                <>
-                    <h3>
-                        {sound.title.rendered}
-                    </h3>
+                <div className="song">
+                    <h3>{sound.title.rendered}</h3>
                     <img src={sound.featured_image_src} alt=""/>
-                    <hr/>
-                </>
+                </div>
             )
         })
     }
@@ -65,12 +61,13 @@ class SearchForm extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" value={this.state.search} onChange={this.handleChange}/>
                     <input type="submit" value='recherche'/>
-
                 </form>
-                {this.state.data ? this.listSounds():'chargement ...'}
+                {this.state.data ? this.listSounds():'Recherchez vos titres préferés !'}
                
             </div>
         )
     }
 }
 export default SearchForm
+
+//Questions : UTF 8 ? Taille de la thumbnail ? 
