@@ -5,8 +5,12 @@ import SearchForm from "../SearchForm/SearchForm";
 
 class Sidebar extends Component {
     render() {
+        console.log(this.props)
         return (
-            <SearchForm/>
+            <div>
+                <SearchForm setResults={this.props.setResults}/>
+
+            </div>
         )
     }
 }

@@ -10,20 +10,40 @@ class Main extends Component {
   constructor(props){
     super(props);
     this.state = {
-      data:null
+      data:null,
+      results:null
     }
 
 
   }
-  setResults(results){
+  listSounds= () =>{
+
+    return this.state.results.results.map((sound, index)=>{
+      console.log(sound)
+      return(
+          <>
+            <h3>
+              {sound.title.rendered}
+            </h3>
+            <img src={sound.featured_image_src} alt=""/>
+            <hr/>
+          </>
+      )
+    })
+  }
+  setResults =(results)=>{
+    this.setState({results:results})
 
   }
 
 
   render() {
+
     return (
       <div className="Main">
-        <Sidebar/>
+        <Sidebar setResults={this.setResults}/>
+
+        {this.state.results ? this.listSounds():'cherchez vos titre préférez ...'}
       </div>
     )
   }
