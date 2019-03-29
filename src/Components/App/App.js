@@ -4,12 +4,13 @@ import React, { Component } from 'react'
 import '../../assets/css/App.css'
 
 import Routes from '../Routes/Routes'
+import SearchForm from "../SearchForm/SearchForm";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Bon courage ;-)</h1>
+      <SearchForm/>
         <Routes />
       </div>
     )
