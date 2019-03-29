@@ -21,13 +21,12 @@ class Main extends Component {
     return this.state.results.results.map((sound, index)=>{
       console.log(sound)
       return(
-          <>
+          <div className="song">
             <h3>
               {sound.title.rendered}
             </h3>
             <img src={sound.featured_image_src} alt=""/>
-            <hr/>
-          </>
+          </div>
       )
     })
   }
