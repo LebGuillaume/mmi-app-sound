@@ -52,7 +52,6 @@ class SearchForm extends Component {
             })
     }
 
-
     render() {
 
         return (
@@ -60,7 +59,6 @@ class SearchForm extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" value={this.state.search} onChange={this.handleChange}/>
                     <input type="submit" value='recherche'/>
-
                 </form>
 
 
@@ -69,3 +67,5 @@ class SearchForm extends Component {
     }
 }
 export default SearchForm
+
+//Questions : UTF 8 ? Taille de la thumbnail ? 

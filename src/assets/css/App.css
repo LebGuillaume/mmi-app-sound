@@ -1,0 +1,36 @@
+.song{
+    display: inline-block;
+    background: #1abc9c;
+}
+
+.song img{
+    transition: opacity 0.9s;
+    width: 300px;
+}
+
+.song img:hover{
+    opacity: 0.4;
+}
+
+.song h3{
+    display: none; 
+    position: absolute;
+    transition: opacity 0.9s;
+    text-align: center;
+}
+
+.song:hover h3{
+    display: inline;
+
+}
+
+.main {
+    display: grid;
+    grid-template-areas: "sidebar liste liste";
+}
+
+.sidebar{
+    grid-area: sidebar;
+    background-color: #1abc9c;
+}
+

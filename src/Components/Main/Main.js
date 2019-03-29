@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import '../../assets/css/App.css'
 
 import Routes from '../Routes/Routes'
-import Sidebar from "../sidebar/Sidebar";
+import Sidebar from "../sidebar/Sidebar.js";
 
 class Main extends Component {
 
@@ -21,13 +21,12 @@ class Main extends Component {
     return this.state.results.results.map((sound, index)=>{
       console.log(sound)
       return(
-          <>
+          <div className="song">
             <h3>
               {sound.title.rendered}
             </h3>
             <img src={sound.featured_image_src} alt=""/>
-            <hr/>
-          </>
+          </div>
       )
     })
   }
