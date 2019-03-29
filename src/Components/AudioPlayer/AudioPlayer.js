@@ -1,5 +1,4 @@
 import React from "react"
-import music from "../music/down-on-my-knees.mp3"
  
 class AudioPlayer extends React.Component {
  
@@ -13,7 +12,7 @@ class AudioPlayer extends React.Component {
     super(props, context)
     this.state = {
       player: null,
-      src: music
+      src: "../music/bite.mp3"
     }
     this.play = this.play.bind(this)
     this.updateVolume = this.updateVolume.bind(this)

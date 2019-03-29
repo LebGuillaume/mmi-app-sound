@@ -44,8 +44,6 @@ class SearchForm extends Component {
                 that.props.setResults( {results:results})
 
 
-                //that.props.setResults(that.state.data)
-
             })
             .catch((error)=>{
                 console.log(error.message)
@@ -67,5 +65,3 @@ class SearchForm extends Component {
     }
 }
 export default SearchForm
-
-//Questions : UTF 8 ? Taille de la thumbnail ? 
