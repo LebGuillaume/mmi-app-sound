@@ -16,16 +16,20 @@ class Main extends Component {
 
 
   }
+    handleClick(e){
+        console.log(e.target.attributes[1].value);
+        this.props.setAudioPlayerSrc(e.target.attributes[1].value);
+    }
   listSounds= () =>{
 
     return this.state.results.results.map((sound, index)=>{
-      console.log(sound)
+      //console.log(sound)
       return(
           <div className="song">
             <h3>
               {sound.title.rendered}
             </h3>
-            <img src={sound.featured_image_src} alt=""/>
+            <img  onClick={(e)=>this.handleClick(e)} src={sound.featured_image_src} data-src={sound.song_url} alt=""/>
           </div>
       )
     })
