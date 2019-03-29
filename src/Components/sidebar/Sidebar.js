@@ -5,9 +5,11 @@ import SearchForm from "../SearchForm/SearchForm.js";
 
 class Sidebar extends Component {
     render() {
+        console.log(this.props)
         return (
-            <div className="sidebar">
-                <SearchForm/>
+            <div>
+                <SearchForm setResults={this.props.setResults}/>
+
             </div>
         )
     }

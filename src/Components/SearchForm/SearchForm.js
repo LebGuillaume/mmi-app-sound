@@ -7,7 +7,7 @@ class SearchForm extends Component {
         super(props);
         this.state = {
             search:'',
-            data:null
+            results:null
         }
 
 
@@ -27,43 +27,41 @@ class SearchForm extends Component {
            return url
        }
    }
-    handleSubmit= (e)=>{
+    handleSubmit=(e)=>{
         e.preventDefault()
         const that = this
+
+            console.log(this.url())
         fetch(this.url())
             .then((response)=>{
                 return response.json()
 
             })
+
             .then((results)=>{
-                that.setState({data:results})
+
+                that.setState({results:results})
+                that.props.setResults( {results:results})
+
+
+                //that.props.setResults(that.state.data)
+
             })
             .catch((error)=>{
                 console.log(error.message)
             })
     }
-    listSounds= () =>{
-
-        return this.state.data.map((sound, index)=>{
-            return(
-                <div className="song">
-                    <h3>{sound.title.rendered}</h3>
-                    <img src={sound.featured_image_src} alt=""/>
-                </div>
-            )
-        })
-    }
 
     render() {
-                        console.log(this.state)
+
         return (
             <div >
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" value={this.state.search} onChange={this.handleChange}/>
                     <input type="submit" value='recherche'/>
                 </form>
-                {this.state.data ? this.listSounds():'Recherchez vos titres préferés !'}
-               
+
+
             </div>
         )
     }
